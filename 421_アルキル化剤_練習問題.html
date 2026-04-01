@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>421 アルキル化剤 練習問題</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+      background: #f0f4f8;
+      color: #2d3748;
+      padding: 24px;
+    }
+    .container { max-width: 820px; margin: 0 auto; }
+
+    header { text-align: center; margin-bottom: 32px; }
+    header h1 { font-size: 1.8rem; color: #2b6cb0; margin-bottom: 6px; }
+    header .sub {
+      display: inline-block;
+      background: #ebf8ff;
+      color: #2b6cb0;
+      border: 1px solid #bee3f8;
+      border-radius: 20px;
+      padding: 3px 14px;
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+    }
+    header p { font-size: 0.88rem; color: #718096; margin-top: 6px; }
+
+    .question-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      padding: 24px 28px;
+      margin-bottom: 20px;
+    }
+    .tag-row { display: flex; gap: 8px; align-items: center; margin-bottom: 10px; flex-wrap: wrap; }
+    .question-number {
+      font-size: 0.75rem; font-weight: 700; color: #fff;
+      background: #2b6cb0;
+      padding: 2px 10px; border-radius: 20px;
+    }
+    .tag {
+      font-size: 0.72rem; font-weight: 600;
+      padding: 2px 9px; border-radius: 20px;
+    }
+    .tag-kijo   { background: #fed7d7; color: #9b2c2c; }
+    .tag-yoho   { background: #fefcbf; color: #744210; }
+    .tag-kino   { background: #c6f6d5; color: #22543d; }
+    .tag-kijo2  { background: #e9d8fd; color: #553c9a; }
+    .tag-sakuyo { background: #bee3f8; color: #2c5282; }
+    .tag-fukuyo { background: #fbd38d; color: #7b341e; }
+    .tag-toyo   { background: #e2e8f0; color: #2d3748; }
+
+    .question-text {
+      font-size: 1rem; font-weight: 600;
+      line-height: 1.75; margin-bottom: 14px;
+    }
+    .choices { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .choices li label {
+      cursor: pointer;
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 9px 14px;
+      border: 1.5px solid #cbd5e0; border-radius: 8px; width: 100%;
+      font-size: 0.93rem; line-height: 1.55;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .choices li label:hover { background: #ebf8ff; border-color: #90cdf4; }
+    input[type="radio"] { accent-color: #2b6cb0; margin-top: 3px; flex-shrink: 0; }
+
+    .btn-row { display: flex; gap: 10px; margin-top: 14px; }
+    .btn-check {
+      background: #2b6cb0; color: #fff; border: none;
+      padding: 8px 20px; border-radius: 8px; cursor: pointer;
+      font-size: 0.9rem; font-family: inherit;
+      transition: background 0.15s;
+    }
+    .btn-check:hover { background: #2c5282; }
+
+    .feedback {
+      margin-top: 12px; padding: 12px 16px;
+      border-radius: 8px; font-size: 0.91rem;
+      line-height: 1.7; display: none;
+    }
+    .feedback.correct  { background: #c6f6d5; color: #22543d; border-left: 4px solid #38a169; }
+    .feedback.incorrect{ background: #fed7d7; color: #742a2a; border-left: 4px solid #e53e3e; }
+    .feedback strong { font-weight: 700; }
+
+    .score-bar {
+      background: #fff; border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      padding: 22px 28px; text-align: center; margin-top: 28px;
+    }
+    .score-bar h2 { font-size: 1.15rem; color: #2b6cb0; margin-bottom: 8px; }
+    .score-value { font-size: 2.8rem; font-weight: 800; color: #2b6cb0; }
+    .score-msg { font-size: 0.9rem; color: #718096; margin-top: 4px; }
+    .btn-all {
+      background: #38a169; color: #fff; border: none;
+      padding: 10px 28px; border-radius: 8px; cursor: pointer;
+      font-size: 1rem; font-family: inherit; margin-top: 16px;
+    }
+    .btn-all:hover { background: #2f855a; }
+
+    footer { text-align: center; font-size: 0.78rem; color: #a0aec0; margin-top: 32px; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>🧪 421 アルキル化剤 練習問題</h1>
+    <div class="sub">外来がん治療専門薬剤師 / がん薬物療法認定薬剤師 / がん専門薬剤師 対応</div>
+    <p>「腫瘍用薬 / 421_アルキル化剤」フォルダのデータより作成　全10問</p>
+  </header>
+
+  <!-- Q1 -->
+  <div class="question-card" id="q1">
+    <div class="tag-row">
+      <span class="question-number">問 1</span>
+      <span class="tag tag-sakuyo">作用機序</span>
+    </div>
+    <p class="question-text">アルキル化剤の主な抗腫瘍作用の機序として最も正しいものはどれか。</p>
+    <ul class="choices">
+      <li><label><input type="radio" name="q1" value="a"> a. トポイソメラーゼを阻害してDNA鎖の切断・再結合を妨げる</label></li>
+      <li><label><input type="radio" name="q1" value="b"> b. DNAにアルキル基を共有結合させ、DNA鎖間・鎖内架橋を形成してDNA複製を阻害する</label></li>
+      <li><label><input type="radio" name="q1" value="c"> c. チューブリン重合を阻害して細胞分裂を停止させる</label></li>
+      <li><label><input type="radio" name="q1" value="d"> d. ヌクレオシドの代謝拮抗によりDNA合成を阻害する</label></li>
+    </ul>
+    <div class="btn-row"><button class="btn-check" onclick="check('q1','b','アルキル化剤はDNAにアルキル基を付加（アルキル化）することで鎖間・鎖内架橋を形成し、DNA二重鎖の解離やDNA複製を阻害します。細胞周期非特異的に作用するため、増殖の遅い腫瘍にも有効です。トポイソメラーゼ阻害は抗腫瘍性抗生物質・カンプトテシン誘導体、チューブリン阻害はビンカアルカロイド・タキサン系、代謝拮抗は別の分類に属します。')">答えを確認</button></div>
+    <div class="feedback" id="q1-fb"></div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="question-card" id="q2">
+    <div class="tag-row">
+      <span class="question-number">問 2</span>
+      <span class="tag tag-yoho">用法・用量</span>
+    </div>
+    <p class="question-text">テモダール点滴静注用100mgを初発の悪性神経膠腫に対して放射線療法と同時に使用する場合の用法として正しいものはどれか。</p>
+    <ul class="choices">
+      <li><label><input type="radio" name="q2" value="a"> a. テモゾロミドとして150mg/m²を1日1回、5日間投与し23日間休薬を1サイクルとする</label></li>
+      <li><label><input type="radio" name="q2" value="b"> b. テモゾロミドとして75mg/m²を、放射線照射期間中の42日間連日投与する</label></li>
+      <li><label><input type="radio" name="q2" value="c"> c. テモゾロミドとして200mg/m²を1日1回、放射線照射日のみ投与する</label></li>
+      <li><label><input type="radio" name="q2" value="d"> d. テモゾロミドとして100mg/m²を週3回、放射線照射期間中投与する</label></li>
+    </ul>
+    <div class="btn-row"><button class="btn-check" onclick="check('q2','b','初発の悪性神経膠腫における放射線療法との同時併用期（Stupp法の導入期）では、テモゾロミドとして75mg/m²を放射線照射期間の42日間連日投与します。その後の維持療法では150〜200mg/m²を1日1回5日間投与し23日間休薬を1サイクルとします。同時期と維持療法の用量を混同しないよう注意が必要です。')">答えを確認</button></div>
+    <div class="feedback" id="q2-fb"></div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="question-card" id="q3">
+    <div class="tag-row">
+      <span class="question-number">問 3</span>
+      <span class="tag tag-fukuyo">副作用・予防</span>
+    </div>
+    <p class="question-text">エンドキサン（シクロホスファミド）の大量投与時に問題となる出血性膀胱炎の主な原因物質として正しいものはどれか。</p>
+    <ul class="choices">
+      <li><label><input type="radio" name="q3" value="a"> a. ホスホラミドマスタード（活性代謝物）</label></li>
+      <li><label><input type="radio" name="q3" value="b"> b. アクロレイン（Acrolein）</label></li>
+      <li><label><input type="radio" name="q3" value="c"> c. クロラムブシル（代謝物）</label></li>
+      <li><label><input type="radio" name="q3" value="d"> d. 4-ヒドロキシシクロホスファミド（4-OH-CP）</label></li>
+    </ul>
+    <div class="btn-row"><button class="btn-check" onclick="check('q3','b','シクロホスファミドは肝臓でCYP2B6等により代謝されてアルドホスファミドとなり、さらに分解されてアルキル化活性を持つホスホラミドマスタード（抗腫瘍効果）と、膀胱毒性の原因物質であるアクロレインを生成します。アクロレインが尿中に排泄される際、膀胱粘膜を障害することで出血性膀胱炎を引き起こします。予防にはメスナ（解毒剤）の投与や十分な輸液による強制利尿が重要です。')">答えを確認</button></div>
+    <div class="feedback" id="q3-fb"></div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="question-card" id="q4">
+    <div class="tag-row">
+      <span class="question-number">問 4</span>
+      <span class="tag tag-kino">効能・効果</span>
+    </div>
+    <p class="question-text">ザノサー点滴静注用1g（ストレプトゾシン）が主に用いられる腫瘍として最も正しいものはどれか。</p>
+    <ul class="choices">
+      <li><label><input type="radio" name="q4" value="a"> a. 悪性神経膠腫</label></li>
+      <li><label><input type="radio" name="q4" value="b"> b. 前立腺癌</label></li>
+      <li><label><input type="radio" name="q4" value="c"> c. 膵島細胞腫瘍（膵内分泌腫瘍）</label></li>
+      <li><label><input type="radio" name="q4" value="d"> d. 慢性リンパ性白血病</label></li>
+    </ul>
+    <div class="btn-row"><button class="btn-check" onclick="check('q4','c','ストレプトゾシン（ザノサー）は膵臓のランゲルハンス島β細胞に選択的に取り込まれる性質を持ち、主に膵島細胞腫瘍（膵内分泌腫瘍／pNET）に使用されます。この選択性はGLUT2トランスポーターを介した取り込みによるものと考えられています。一般的な固形腫瘍への使用とは異なる特殊な適応を持つアルキル化剤として覚えておきましょう。')">答えを確認</button></div>
+    <div class="feedback" id="q4-fb"></div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="question-card" id="q5">
+    <div class="tag-row">
+      <span class="question-number">問 5</span>
+      <span class="tag tag-kijo">禁忌・理由</span>
+    </div>
+    <p class="question-text">テモゾロミド製剤（テモダール）の禁忌に「ダカルバジンに対する過敏症の既往歴のある患者」が含まれる理由として最も適切なものはどれか。</p>
+    <ul class="choices">
+      <li><label><input type="radio" name="q5" value="a"> a. テモゾロミドとダカルバジンはいずれもアントラサイクリン系に属し、構造的に類似しているため</label></li>
+      <li><label><input type="radio" name="q5" value="b"> b. テモゾロミドとダカルバジンは体内で同一の活性代謝物（MTIC）を生じるため、交差過敏反応が生じる可能性があるため</label></li>
+      <li><label><input type="radio" name="q5" value="c"> c. 両薬剤はともに腎排泄型であり、腎機能低下患者で過敏症リスクが高まるため</label></li>
+      <li><label><input type="radio" name="q5" value="d"> d. ダカルバジンがテモゾロミドの代謝酵素を阻害し、血中濃度が上昇するため</label></li>
+    </ul>
+    <div class="btn-row"><button class="btn-check" onclick="check('q5','b','テモゾロミドは水溶液中で非酵素的に加水分解され、活性代謝物であるMTIC（5-（3-メチルトリアゼン-1-イル）イミダゾール-4-カルボキサミド）を生成します。ダカルバジンも生体内で同じMTICに変換されます。このため両薬剤は同一の最終活性体を持ち、ダカルバジンに過敏症歴がある患者ではテモゾロミドでも交差過敏反応が生じるリスクがあることから、禁忌とされています。')">答えを確認</button></div>
+    <div class="feedback" id="q5-fb"></div>
+  </div>
+
+  <!-- Q6 -->
+  <div class="question-card" id="q6">
+    <div class="tag-row">
+      <span class="question-number">問 6</span>
+      <span class="tag tag-toyo">投与方法・剤形</span>
+    </div>
+    <p class="question-text">ギリアデル脳内留置用剤7.7mgの投与方法として正しいものはどれか。</p>
+    <ul class="choices">
+      <li><label><input type="radio" name="q6" value="a"> a. 脊髄腔内に直接注入して局所投与を行う</label></li>
+      <li><label><input type="radio" name="q6" value="b"> b. 外科的手術にて腫瘍を摘出した後、摘出腔の腫瘍壁面に最大8枚まで留置する</label></li>
+      <li><label><input type="radio" name="q6" value="c"> c. 経口投与後、腸管から吸収されて脳に移行する</label></li>
+      <li><label><input type="radio" name="q6" value="d"> d. 経鼻腔的に留置チューブを挿入し、脳室内に滴下する</label></li>
+    </ul>
+    <div class="btn-row"><button class="btn-check" onclick="check('q6','b','ギリアデルは外科手術で腫瘍（高悪性度神経膠腫）を摘出した後、その摘出腔の腫瘍壁面にカルムスチンを含む生分解性ポリマーウエハーを最大8枚まで留置します。ウエハーは時間をかけて徐々に分解され、カルムスチンを局所に放出します。全身性の骨髄抑制を軽減しながら腫瘍局所に高濃度の薬剤を届けられる点が特徴です。')">答えを確認</button></div>
+    <div class="feedback" id="q6-fb"></div>
+  </div>
+
+  <!-- Q7 -->
+  <div class="question-card" id="q7">
+    <div class="tag-row">
+      <span class="question-number">問 7</span>
+      <span class="tag tag-yoho">用法・用量</span>
+    </div>
+    <p class="question-text">トレアキシン点滴静注用（ベンダムスチン塩酸塩）を、抗CD20抗体薬と併用して低悪性度B細胞性非ホジキンリンパ腫に用いる場合の標準的な投与スケジュールとして正しいものはどれか。</p>
+    <ul class="choices">
+      <li><label><input type="radio" name="q7" value="a"> a. 90mg/m²を1日1回1時間かけて点滴静注、2日間連日投与し26日間休薬（28日間を1サイクル）</label></li>
+      <li><label><input type="radio" name="q7" value="b"> b. 120mg/m²を1日1回1時間かけて点滴静注、3日間連日投与し25日間休薬（28日間を1サイクル）</label></li>
+      <li><label><input type="radio" name="q7" value="c"> c. 100mg/m²を1日1回30分かけて点滴静注、5日間連日投与し16日間休薬（21日間を1サイクル）</label></li>
+      <li><label><input type="radio" name="q7" value="d"> d. 70mg/m²を週1回静脈内投与し、4週間後に休薬（8週間を1サイクル）</label></li>
+    </ul>
+    <div class="btn-row"><button class="btn-check" onclick="check('q7','a','抗CD20抗体薬との併用時は、ベンダムスチン塩酸塩として90mg/m²を1日1回1時間かけて点滴静注し、2日間連日投与→26日間休薬（28日間を1サイクル）とします。なお、単独投与（再発・難治性例）では120mg/m²に増量されます。慢性リンパ性白血病への使用では100mg/m²、2日間連日投与が標準です。疾患・併用有無によって用量が異なる点に注意が必要です。')">答えを確認</button></div>
+    <div class="feedback" id="q7-fb"></div>
+  </div>
+
+  <!-- Q8 -->
+  <div class="question-card" id="q8">
+    <div class="tag-row">
+      <span class="question-number">問 8</span>
+      <span class="tag tag-toyo">貯法・投与管理</span>
+    </div>
+    <p class="question-text">テモダール点滴静注用100mgの貯法と有効期限の組み合わせとして正しいものはどれか。</p>
+    <ul class="choices">
+      <li><label><input type="radio" name="q8" value="a"> a. 室温保存　／　有効期限 3年</label></li>
+      <li><label><input type="radio" name="q8" value="b"> b. 2〜8℃に保存　／　有効期限 4年</label></li>
+      <li><label><input type="radio" name="q8" value="c"> c. 2〜8℃に保存　／　有効期限 30箇月</label></li>
+      <li><label><input type="radio" name="q8" value="d"> d. −20℃以下で凍結保存　／　有効期限 2年</label></li>
+    </ul>
+    <div class="btn-row"><button class="btn-check" onclick="check('q8','b','テモダール点滴静注用100mgは2〜8℃に保存し、有効期限は4年です。同じアルキル化剤でも貯法が異なります：ブスルフェクス（ブスルファン）は2〜8℃保存・有効期限30箇月、トレアキシン（ベンダムスチン）は室温保存・有効期限3年です。調剤・在庫管理において各製剤の貯法を正確に把握することは、がん薬物療法を安全に実施するうえで重要です。')">答えを確認</button></div>
+    <div class="feedback" id="q8-fb"></div>
+  </div>
+
+  <!-- Q9 -->
+  <div class="question-card" id="q9">
+    <div class="tag-row">
+      <span class="question-number">問 9</span>
+      <span class="tag tag-kino">効能・効果</span>
+    </div>
+    <p class="question-text">ブスルフェクス点滴静注用60mg（ブスルファン）の効能・効果に含まれるものはどれか。</p>
+    <ul class="choices">
+      <li><label><input type="radio" name="q9" value="a"> a. 悪性神経膠腫に対する同種造血幹細胞移植の前治療</label></li>
+      <li><label><input type="radio" name="q9" value="b"> b. 慢性リンパ性白血病</label></li>
+      <li><label><input type="radio" name="q9" value="c"> c. 神経芽細胞腫における自家造血幹細胞移植の前治療</label></li>
+      <li><label><input type="radio" name="q9" value="d"> d. 前立腺癌の骨転移</label></li>
+    </ul>
+    <div class="btn-row"><button class="btn-check" onclick="check('q9','c','ブスルフェクス（ブスルファン）の効能・効果には、同種造血幹細胞移植の前治療のほか、ユーイング肉腫ファミリー腫瘍・神経芽細胞腫・悪性リンパ腫における自家造血幹細胞移植の前治療が含まれます。小児固形腫瘍の移植前処置として重要な位置づけを持つ薬剤です。慢性リンパ性白血病はベンダムスチン（トレアキシン）の適応です。')">答えを確認</button></div>
+    <div class="feedback" id="q9-fb"></div>
+  </div>
+
+  <!-- Q10 -->
+  <div class="question-card" id="q10">
+    <div class="tag-row">
+      <span class="question-number">問 10</span>
+      <span class="tag tag-kijo2">禁忌</span>
+    </div>
+    <p class="question-text">ブスルフェクス点滴静注用60mg（ブスルファン）の禁忌として定められているものはどれか。</p>
+    <ul class="choices">
+      <li><label><input type="radio" name="q10" value="a"> a. 糖尿病の既往歴がある患者</label></li>
+      <li><label><input type="radio" name="q10" value="b"> b. ペントスタチンを投与中の患者</label></li>
+      <li><label><input type="radio" name="q10" value="c"> c. 重病感染症を合併している患者</label></li>
+      <li><label><input type="radio" name="q10" value="d"> d. 腎機能障害（Ccr 30mL/min未満）を有する患者</label></li>
+    </ul>
+    <div class="btn-row"><button class="btn-check" onclick="check('q10','c','ブスルフェクス（ブスルファン）の禁忌には「重症感染症を合併している患者」が含まれます。移植前処置薬として強力な免疫抑制・骨髄抑制をきたすため、感染症が未コントロールな状態での投与は生命の危険をさらに高めます。なお、ペントスタチンとの併用禁忌はシクロホスファミド（エンドキサン）の禁忌です。両薬剤の禁忌を混同しないよう整理しましょう。')">答えを確認</button></div>
+    <div class="feedback" id="q10-fb"></div>
+  </div>
+
+  <!-- スコア -->
+  <div class="score-bar">
+    <h2>📊 採点結果</h2>
+    <div class="score-value" id="score-display">-</div>
+    <p class="score-msg">/ 10問</p>
+    <button class="btn-all" onclick="gradeAll()">全問まとめて採点する</button>
+  </div>
+
+  <footer>
+    <p>出典：腫瘍用薬 / 421_アルキル化剤 インタビューフォーム・添付文書より作成</p>
+  </footer>
+</div>
+
+<script>
+  const answers = { q1:'b', q2:'b', q3:'b', q4:'c', q5:'b', q6:'b', q7:'a', q8:'b', q9:'c', q10:'c' };
+
+  function check(qid, correct, explanation) {
+    const selected = document.querySelector('input[name="' + qid + '"]:checked');
+    const fb = document.getElementById(qid + '-fb');
+    if (!selected) {
+      fb.style.display = 'block';
+      fb.className = 'feedback incorrect';
+      fb.textContent = '選択肢を選んでください。';
+      return;
+    }
+    if (selected.value === correct) {
+      fb.className = 'feedback correct';
+      fb.innerHTML = '✅ <strong>正解！</strong>　' + explanation;
+    } else {
+      const correctEl = document.querySelector('input[name="' + qid + '"][value="' + correct + '"]');
+      const correctText = correctEl ? correctEl.parentElement.textContent.trim() : '';
+      fb.className = 'feedback incorrect';
+      fb.innerHTML = '❌ <strong>不正解。</strong>正解は「<strong>' + correctText + '</strong>」<br>' + explanation;
+    }
+    fb.style.display = 'block';
+  }
+
+  function gradeAll() {
+    let score = 0;
+    let unanswered = 0;
+    Object.keys(answers).forEach(qid => {
+      const selected = document.querySelector('input[name="' + qid + '"]:checked');
+      if (!selected) { unanswered++; return; }
+      if (selected.value === answers[qid]) score++;
+    });
+    const disp = document.getElementById('score-display');
+    disp.textContent = score;
+    const msg = document.querySelector('.score-msg');
+    if (unanswered > 0) {
+      msg.textContent = '/ 10問（未回答 ' + unanswered + '問あり）';
+    } else {
+      msg.textContent = '/ 10問';
+    }
+  }
+</script>
+</body>
+</html>
