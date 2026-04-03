@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【お試し】がん薬物療法 トレーニング問題 ｜ 抗腫瘍性抗生物質編</title>
+<meta property="og:title" content="【無料お試し】がん薬物療法 トレーニング問題｜抗腫瘍性抗生物質 Round 01">
+<meta property="og:description" content="添付文書ベースのがん薬物療法クイズ（お試し3問）｜Ohana Lab">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【無料お試し】がん薬物療法 トレーニング問題｜抗腫瘍性抗生物質 Round 01">
+<meta name="twitter:description" content="添付文書ベースのがん薬物療法クイズ（お試し3問）｜Ohana Lab">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Hiragino Kaku Gothic ProN","Meiryo",sans-serif;background:#f0f4f8;color:#2d3748;padding:24px}
+.container{max-width:820px;margin:0 auto}
+
+.brand-bar{text-align:center;margin-bottom:8px}
+.brand-name{font-size:.85rem;font-weight:700;color:#2b6cb0;letter-spacing:.08em;background:#ebf4ff;display:inline-block;padding:4px 16px;border-radius:20px}
+header{text-align:center;margin-bottom:32px}
+header h1{font-size:1.8rem;color:#2b6cb0;margin-bottom:6px}
+.sub{font-size:.95rem;color:#718096}
+.free-badge{display:inline-block;background:#ed8936;color:#fff;font-size:.78rem;font-weight:700;padding:3px 10px;border-radius:12px;margin-left:8px;vertical-align:middle}
+
+.question-card{background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.08);padding:24px 28px;margin-bottom:20px}
+.tag-row{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.question-number{background:#ebf4ff;color:#2b6cb0;font-weight:700;font-size:.85rem;padding:4px 12px;border-radius:6px}
+.question-text{font-size:1.05rem;line-height:1.7;margin-bottom:16px;font-weight:600}
+.choices{list-style:none;display:flex;flex-direction:column;gap:8px}
+.choices li label{cursor:pointer;display:flex;align-items:flex-start;gap:10px;padding:9px 14px;border:1.5px solid #cbd5e0;border-radius:8px;width:100%;transition:background .15s}
+.choices li label:hover{background:#f7fafc}
+.choices li input[type=radio]{margin-top:4px;accent-color:#2b6cb0}
+.btn-row{margin-top:14px}
+.btn-check{background:#2b6cb0;color:#fff;border:none;padding:9px 22px;border-radius:8px;font-size:.93rem;cursor:pointer;font-weight:600}
+.btn-check:hover{background:#2c5282}
+.feedback{margin-top:12px;padding:12px 16px;border-radius:8px;font-size:.91rem;display:none;line-height:1.6}
+.feedback.correct{background:#c6f6d5;color:#22543d;border-left:4px solid #38a169;display:block}
+.feedback.incorrect{background:#fed7d7;color:#822727;border-left:4px solid #e53e3e;display:block}
+
+/* ===== CTA ===== */
+.cta-box{background:linear-gradient(135deg,#2b6cb0 0%,#553c9a 100%);border-radius:12px;padding:32px 28px;text-align:center;margin-top:28px;color:#fff}
+.cta-box h2{font-size:1.3rem;margin-bottom:8px}
+.cta-box p{font-size:.95rem;line-height:1.7;margin-bottom:6px;opacity:.92}
+.cta-list{list-style:none;text-align:left;max-width:400px;margin:16px auto;font-size:.93rem;line-height:2}
+.cta-list li::before{content:"\2714";margin-right:8px;color:#68d391}
+.cta-btn{display:inline-block;margin-top:16px;padding:12px 32px;background:#fff;color:#2b6cb0;border-radius:8px;text-decoration:none;font-size:1rem;font-weight:700}
+.cta-btn:hover{background:#ebf4ff}
+.cta-price{font-size:.85rem;opacity:.8;margin-top:10px}
+
+/* ===== Xシェアボタン ===== */
+.share-area{text-align:center;margin-top:20px}
+.btn-share{background:#000;color:#fff;border:none;padding:10px 24px;border-radius:8px;font-size:.93rem;cursor:pointer;font-weight:600;display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+.btn-share:hover{background:#333}
+.btn-share svg{width:18px;height:18px;fill:#fff}
+
+footer{text-align:center;margin-top:32px;padding-top:20px;border-top:1px solid #e2e8f0}
+.footer-brand{font-size:.95rem;font-weight:700;color:#2b6cb0;margin-bottom:6px}
+.footer-note{font-size:.78rem;color:#a0aec0;margin-top:10px}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="brand-bar"><span class="brand-name">Ohana Lab</span></div>
+<header>
+<h1>がん薬物療法 トレーニング問題</h1>
+<span class="sub">抗腫瘍性抗生物質 Round 01<span class="free-badge">無料お試し</span></span>
+</header>
+
+<!-- 問1（有料版Q1：ドキシル&reg;のEPR効果） -->
+<div class="question-card">
+<div class="tag-row"><span class="question-number">問 1 / 3</span></div>
+<div class="question-text">ドキソルビシン塩酸塩リポソーム注射剤（ドキシル&reg;）が腫瘍組織に選択的に集積するメカニズムとして正しいのはどれか。</div>
+<ul class="choices">
+<li><label><input type="radio" name="q1" value="a"> a. CD33抗原を介した能動的ターゲティング</label></li>
+<li><label><input type="radio" name="q1" value="b"> b. EPR（Enhanced Permeability and Retention）効果を利用した受動的ターゲティング</label></li>
+<li><label><input type="radio" name="q1" value="c"> c. 肝動脈カテーテルによる局所投与</label></li>
+<li><label><input type="radio" name="q1" value="d"> d. 膀胱腔内注入による直接接触</label></li>
+</ul>
+<div class="btn-row"><button class="btn-check" onclick="check('q1','b','ドキシル&reg;はMPEG-DSPEで修飾されたSTEALTHリポソーム製剤です。MPEGの親水性により細網内皮系に異物として認識されにくく血中循環時間が延長し、腫瘍組織の血管透過性亢進と滞留性の増大（EPR効果）を利用して受動的に腫瘍に集積します。手足症候群（78.4%）が特徴的な副作用です。')">答えを確認</button></div>
+<div class="feedback" id="q1-fb"></div>
+</div>
+
+<!-- 問2（有料版Q4：マイトマイシンCの細胞周期特異性） -->
+<div class="question-card">
+<div class="tag-row"><span class="question-number">問 2 / 3</span></div>
+<div class="question-text">マイトマイシンCが高い感受性を示す細胞周期として正しいのはどれか。</div>
+<ul class="choices">
+<li><label><input type="radio" name="q2" value="a"> a. M期（分裂期）</label></li>
+<li><label><input type="radio" name="q2" value="b"> b. G1期後半からS期前半</label></li>
+<li><label><input type="radio" name="q2" value="c"> c. G2期（分裂準備期）</label></li>
+<li><label><input type="radio" name="q2" value="d"> d. 細胞周期非特異的に作用する</label></li>
+</ul>
+<div class="btn-row"><button class="btn-check" onclick="check('q2','b','マイトマイシンCは腫瘍細胞のDNAと結合し、二重鎖DNAへの架橋形成を介してDNA複製を阻害します。DNA合成前期（G1期）後半からDNA合成期（S期）前半の細胞に高い感受性を示すことが確認されています。なお、ピラルビシン（テラルビシン&reg;）はG2期で細胞回転を停止させる点で異なります。')">答えを確認</button></div>
+<div class="feedback" id="q2-fb"></div>
+</div>
+
+<!-- 問3（有料版Q6：ブレオマイシンの総投与量） -->
+<div class="question-card">
+<div class="tag-row"><span class="question-number">問 3 / 3</span></div>
+<div class="question-text">ブレオマイシン（ブレオ&reg;注射用）の総投与量の上限に関する記述として正しいのはどれか。（胚細胞腫瘍のBEP療法を除く）</div>
+<ul class="choices">
+<li><label><input type="radio" name="q3" value="a"> a. 総投与量300mg以下</label></li>
+<li><label><input type="radio" name="q3" value="b"> b. 総投与量500mg/m²以下</label></li>
+<li><label><input type="radio" name="q3" value="c"> c. 総投与量900mg/m²以下</label></li>
+<li><label><input type="radio" name="q3" value="d"> d. 総投与量に上限の規定はない</label></li>
+</ul>
+<div class="btn-row"><button class="btn-check" onclick="check('q3','a','ブレオマイシンの総投与量は300mg（力価）以下とされています。ただし胚細胞腫瘍に対する確立された標準的な併用療法（BEP療法：ブレオマイシン＋エトポシド＋シスプラチン）では360mg（力価）以下です。60歳以上の高齢者では150mg以下でも間質性肺炎の発現頻度が高くなります。')">答えを確認</button></div>
+<div class="feedback" id="q3-fb"></div>
+</div>
+
+<!-- CTA -->
+<div class="cta-box">
+<h2>残り7問＋全問採点は<br>メンバーシップ限定で配信中</h2>
+<p>Ohana Lab では、添付文書ベースのトレーニング問題を<br>週2〜3回配信しています。</p>
+<ul class="cta-list">
+<li>全10問＋詳細解説・自動採点</li>
+<li>過去のバックナンバーもすべて閲覧可</li>
+<li>がん専門・認定薬剤師の資格取得をサポート</li>
+</ul>
+<a class="cta-btn" href="https://note.com/uma_pharma/membership" target="_blank" rel="noopener">Ohana Lab に参加する</a>
+<p class="cta-price">月額 980円 ｜ 全有料記事が読み放題</p>
+</div>
+
+<!-- Xシェア -->
+<div class="share-area">
+<a class="btn-share" href="https://x.com/intent/tweet?text=%E3%81%8C%E3%82%93%E8%96%AC%E7%89%A9%E7%99%82%E6%B3%95%E3%83%88%E3%83%AC%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0%E5%95%8F%E9%A1%8C%EF%BC%88%E7%84%A1%E6%96%99%E3%81%8A%E8%A9%A6%E3%81%97%EF%BC%89%E6%8A%97%E8%85%AB%E7%98%8D%E6%80%A7%E6%8A%97%E7%94%9F%E7%89%A9%E7%B7%A8%20Round%2001%20%E3%82%92%E8%A7%A3%E3%81%84%E3%81%A6%E3%81%BF%E3%81%BE%E3%81%97%E3%81%9F%EF%BC%81%0A%23OhanaLab%20%23%E3%81%8C%E3%82%93%E5%B0%82%E9%96%80%E8%96%AC%E5%89%A4%E5%B8%AB%20%23%E3%81%8C%E3%82%93%E8%96%AC%E7%89%A9%E7%99%82%E6%B3%95&url=https%3A%2F%2Fnote.com%2Fuma_pharma%2Fmembership" target="_blank" rel="noopener">
+<svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+Xでシェアする
+</a>
+</div>
+
+<footer>
+<div class="footer-brand">Ohana Lab ― がん領域専門コミュニティ</div>
+<p class="footer-note">出典：各薬剤添付文書・インタビューフォーム（抗腫瘍性抗生物質製剤）に基づき作成<br>&copy; Ohana Lab / おはな＠がん専門×薬剤師の効率化戦略室</p>
+</footer>
+</div>
+
+<script>
+function check(qid,correct,explanation){
+const selected=document.querySelector('input[name="'+qid+'"]:checked');
+const fb=document.getElementById(qid+'-fb');
+if(!selected){fb.textContent='選択肢を選んでください。';fb.className='feedback incorrect';return}
+if(selected.value===correct){fb.innerHTML='&#10004; <strong>正解！</strong>\u3000'+explanation;fb.className='feedback correct'}
+else{fb.innerHTML='&#10008; <strong>不正解。</strong>正解は <strong>'+correct+'</strong> です。\u3000'+explanation;fb.className='feedback incorrect'}
+}
+</script>
+</body>
+</html>
